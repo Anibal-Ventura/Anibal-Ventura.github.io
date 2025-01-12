@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poesia para Idalina</title>
+    <style>
+        /* Resetando margens e padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Configuração geral do body */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6e7bff, #b19cd9);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        /* Animação de fundo */
+        @keyframes backgroundAnimation {
+            0% {
+                background: linear-gradient(135deg, #6e7bff, #b19cd9);
+            }
+            100% {
+                background: linear-gradient(135deg, #b19cd9, #6e7bff);
+            }
+        }
+
+        /* Estilo do contêiner da poesia */
+        .poesia-container {
+            max-width: 800px;
+            width: 100%;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 0.8); /* Ajustei a opacidade */
+            animation: fadeIn 2s ease-out;
+            margin: auto;
+        }
+
+        /* Estilo do título */
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #f5c6ff;
+        }
+
+        /* Estilo da poesia */
+        p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: #f0e6f7;
+        }
+
+        /* Efeito hover nas palavras-chave */
+        .highlight {
+            color: #ff9bcf;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .highlight:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .poesia-container {
+                padding: 20px;
+                margin: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="poesia-container">
+        <h1>Poesia para Idalina</h1>
+        <p>
+            Idalina, você é o código que me fascina,<br>
+            Com sua lógica, um fluxo que ilumina.<br>
+            Cada linha escrita em seu nome é <span class="highlight">arte</span>,<br>
+            Um algoritmo perfeito, em todas as partes.<br>
+            Se houvesse um 'se' no coração,<br>
+            A resposta seria você, com muita razão.<br>
+            Não preciso de um 'senão' para perceber<br>
+            Que o código mais belo é o que eu vejo em você.
+        </p>
+    </div>
+
+</body>
+</html>
