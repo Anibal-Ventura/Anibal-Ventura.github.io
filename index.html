@@ -104,8 +104,11 @@
     </style>
 </head>
 <body>
-
-    <div class="poesia-container">
+<form>
+    <p>Este repositório foi destinado a uma pessoa, quem é ela?</p>
+    <input placeholder="Insira o seu nome" type="text"/>
+</form>
+    <div class="poesia-container" style="display:none;">
         <h1>O código que me fascina</h1>
         <p>
             Idalina, você é o código que me fascina,<br>
@@ -118,6 +121,17 @@
             Que o código mais belo é o que eu vejo em você.
         </p>
     </div>
-
+<script>
+    // vcs sao curiosos demais, para cir ate aqui😅
+    // querem mesmo saber quem é...
+    const input = document.querySelector("input")
+    const poesia= document.querySelector(".poesia-container")
+    const form = document.querySelector("form").addEventListener("submit",(e)=>{
+        e.preventDefault()
+        if(input.value === "Idalina"){
+           poesia.style.display ="block"
+    }
+    })
+</script>
 </body>
 </html>
