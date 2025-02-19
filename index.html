@@ -26,16 +26,6 @@
             padding: 20px;
         }
 
-        /* Animação de fundo */
-        @keyframes backgroundAnimation {
-            0% {
-                background: linear-gradient(135deg, #6e7bff, #b19cd9);
-            }
-            100% {
-                background: linear-gradient(135deg, #b19cd9, #6e7bff);
-            }
-        }
-
         /* Estilo do contêiner da poesia */
         .poesia-container {
             max-width: 800px;
@@ -44,8 +34,7 @@
             border-radius: 15px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             background-color: rgba(0, 0, 0, 0.8); /* Ajustei a opacidade */
-            animation: fadeIn 2s ease-out;
-            margin: auto;
+            display: none; /* Agora a poesia começa escondida */
         }
 
         /* Estilo do título */
@@ -76,39 +65,52 @@
             transform: scale(1.1);
         }
 
-        /* Responsividade */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-
-            .poesia-container {
-                padding: 20px;
-                margin: 10px;
-            }
+        /* Estilo do formulário */
+        form {
+            margin-bottom: 20px;
         }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.6rem;
-            }
+        input {
+            padding: 10px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            outline: none;
+        }
 
-            p {
-                font-size: 0.9rem;
-            }
+        input::placeholder {
+            color: #ccc;
+        }
+
+        input:focus {
+            border-color: #ff9bcf;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff9bcf;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff6aa1;
         }
     </style>
 </head>
 <body>
-<form>
-    <p>Este repositório foi destinado a uma pessoa, quem é ela?</p>
-    <input placeholder="Insira o seu nome" type="text"/>
-</form>
-    <div class="poesia-container" style="display:none;">
+    <form>
+        <p>Este repositório foi destinado a uma pessoa, quem é ela?</p>
+        <input placeholder="Insira o seu nome" type="text" id="nameInput" />
+        <button type="submit">Enviar</button>
+    </form>
+    <div class="poesia-container">
         <h1>O código que me fascina</h1>
         <p>
             Idalina, você é o código que me fascina,<br>
@@ -121,17 +123,22 @@
             Que o código mais belo é o que eu vejo em você.
         </p>
     </div>
-<script>
-    // vcs sao curiosos demais, para cir ate aqui😅
-    // querem mesmo saber quem é...
-    const input = document.querySelector("input")
-    const poesia= document.querySelector(".poesia-container")
-    const form = document.querySelector("form").addEventListener("submit",(e)=>{
-        e.preventDefault()
-        if(input.value === "Idalina"){
-           poesia.style.display ="block"
-    }
-    })
-</script>
+    <script>
+        // Seleciona os elementos
+        const input = document.querySelector("#nameInput");
+        const poesia = document.querySelector(".poesia-container");
+        const form = document.querySelector("form");
+
+        // Adiciona o evento de submit no formulário
+        form.addEventListener("submit", (e) => {
+            e.preventDefault(); // Previne o comportamento padrão
+            if (input.value.trim().toLowerCase() === "idalina") {
+                poesia.style.display = "block"; // Mostra a poesia
+                form.style.display = "none"; // Esconde o formulário
+            } else {
+                alert("Nome incorreto. Tente novamente!");
+            }
+        });
+    </script>
 </body>
-</html>
+    </html>
