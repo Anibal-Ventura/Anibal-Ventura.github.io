@@ -124,21 +124,24 @@
         </p>
     </div>
     <script>
-        // Seleciona os elementos
+        
         const input = document.querySelector("#nameInput");
         const poesia = document.querySelector(".poesia-container");
         const form = document.querySelector("form");
 
-        // Adiciona o evento de submit no formulário
+        // Tanta curiosidade em saber quem é?😅
         form.addEventListener("submit", (e) => {
-            e.preventDefault(); // Previne o comportamento padrão
+            e.preventDefault();
             if (input.value.trim().toLowerCase() === "idalina") {
-                poesia.style.display = "block"; // Mostra a poesia
-                form.style.display = "none"; // Esconde o formulário
+                hide()
             } else {
                 alert("Nome incorreto. Tente novamente!");
             }
         });
+        function hide(){
+            form.style.display = "none";
+            poesia.style.display = "block";
+        }
     </script>
 </body>
     </html>
